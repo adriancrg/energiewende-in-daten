@@ -78,7 +78,17 @@ pip install -r requirements.txt
 
 ## Ausführen
 
-Folgt in den nächsten Schritten.
+**1. Daten herunterladen**
+
+```bash
+python src/download.py
+```
+
+Das Skript lädt alle Zeitreihen von SMARD herunter und speichert sie in `data/`.
+Beim ersten Mal dauert das etwa 15 Minuten. Danach lädt das Skript nur neue oder
+unvollständige Wochen herunter.
+
+Weitere Schritte folgen.
 
 ## Ergebnisse
 
