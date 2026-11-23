@@ -106,6 +106,14 @@ python src/database.py
 Das Skript erstellt die SQLite-Datenbank `data/energy.db` und führt die SQL-Abfragen aus
 dem Ordner `sql/` aus (Anteil erneuerbarer Energien, negative Preise, Datenqualität).
 
+**4. Analyse und Grafiken**
+
+```bash
+python src/analysis.py
+```
+
+Das Skript erstellt die Grafiken zu den Fragen 1 und 2 im Ordner `figures/`.
+
 Weitere Schritte folgen.
 
 ## Ergebnisse
