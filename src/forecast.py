@@ -116,18 +116,24 @@ def plot_example(test, start, end, name):
     save(figure, name)
 
 
-def main():
+def run_forecast():
+    """Train on 2020-2024 and return the test period with baseline and model forecasts."""
     table = add_features(load_data())
     train = table[table["timestamp_local"] < TEST_START]
     test = table[table["timestamp_local"] >= TEST_START].copy()
-    print(f"Training: {len(train)} hours, test: {len(test)} hours "
-          f"({test['timestamp_local'].min():%Y-%m-%d} to {test['timestamp_local'].max():%Y-%m-%d})")
 
     model = HistGradientBoostingRegressor(random_state=0)
     model.fit(train[FEATURES], train["load"])
 
     test["baseline"] = test["load_7_days_ago"]
     test["model"] = model.predict(test[FEATURES])
+    return train, test
+
+
+def main():
+    train, test = run_forecast()
+    print(f"Training: {len(train)} hours, test: {len(test)} hours "
+          f"({test['timestamp_local'].min():%Y-%m-%d} to {test['timestamp_local'].max():%Y-%m-%d})")
 
     results = pd.DataFrame({
         "Baseline": evaluate(test["load"], test["baseline"]),

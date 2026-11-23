@@ -123,6 +123,15 @@ python src/forecast.py
 Das Skript trainiert das Modell mit den Daten 2020–2024, testet es mit den Daten ab 2025
 und vergleicht es mit der Baseline (MAE und MAPE).
 
+**6. Dashboard starten**
+
+```bash
+streamlit run src/dashboard.py
+```
+
+Das Dashboard öffnet sich im Browser. Man kann einen Zeitraum wählen und sieht
+Stromerzeugung, Anteil erneuerbarer Energien, negative Preise und die Prognose.
+
 Weitere Schritte folgen.
 
 ## Ergebnisse
