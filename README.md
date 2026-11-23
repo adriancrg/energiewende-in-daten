@@ -88,6 +88,15 @@ Das Skript lädt alle Zeitreihen von SMARD herunter und speichert sie in `data/`
 Beim ersten Mal dauert das etwa 15 Minuten. Danach lädt das Skript nur neue oder
 unvollständige Wochen herunter.
 
+**2. Daten bereinigen und prüfen**
+
+```bash
+python src/clean.py
+```
+
+Das Skript prüft die Datenqualität (Lücken, Ausreißer, Zeitumstellung), zeigt einen
+Bericht in der Konsole und speichert die bereinigten Daten in `data/smard_hourly_clean.csv`.
+
 Weitere Schritte folgen.
 
 ## Ergebnisse
