@@ -97,6 +97,15 @@ python src/clean.py
 Das Skript prüft die Datenqualität (Lücken, Ausreißer, Zeitumstellung), zeigt einen
 Bericht in der Konsole und speichert die bereinigten Daten in `data/smard_hourly_clean.csv`.
 
+**3. Datenbank erstellen und SQL-Abfragen ausführen**
+
+```bash
+python src/database.py
+```
+
+Das Skript erstellt die SQLite-Datenbank `data/energy.db` und führt die SQL-Abfragen aus
+dem Ordner `sql/` aus (Anteil erneuerbarer Energien, negative Preise, Datenqualität).
+
 Weitere Schritte folgen.
 
 ## Ergebnisse
