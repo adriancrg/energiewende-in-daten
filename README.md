@@ -114,6 +114,15 @@ python src/analysis.py
 
 Das Skript erstellt die Grafiken zu den Fragen 1 und 2 im Ordner `figures/`.
 
+**5. Prognose der Netzlast**
+
+```bash
+python src/forecast.py
+```
+
+Das Skript trainiert das Modell mit den Daten 2020–2024, testet es mit den Daten ab 2025
+und vergleicht es mit der Baseline (MAE und MAPE).
+
 Weitere Schritte folgen.
 
 ## Ergebnisse
